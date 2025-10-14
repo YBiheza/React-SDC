@@ -1,0 +1,20 @@
+.buttonStyles {
+  padding: 19px 35px;
+  color: white;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 1;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  border-style: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  border: 1px solid #61728333;
+  cursor: not-allowed;
+  background-color: transparent;
+  color: #222222;
+}
+

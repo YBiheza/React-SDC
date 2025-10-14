@@ -1,0 +1,104 @@
+@import url('../../variables.css');
+
+.footer {
+  width: 100%;
+  background-color: var(--background-blue);
+  background-image: url('../../assets/bg.png');
+  background-repeat: no-repeat;
+  background-position: top 133px left 0;
+  background-size: auto
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  position: relative;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 17px;
+}
+
+.slogan {
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.36px;
+    color: var(--light-text)
+}
+
+.right {
+    display: flex;
+}
+
+.ListBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.flist {
+    margin-right: 126px;
+}
+
+.seclist {
+    margin-right: 60px;
+}
+
+.thlist {
+    margin-right: 64px;
+}
+
+.downBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 71px;
+    border-top: 1px solid #7E828F17;
+}
+
+.socialMediaBlock {
+    display: flex;
+    padding: 0 12px;
+    gap: 24px;
+}
+
+.socialMediaBlock a{
+    cursor:not-allowed;
+}
+
+.backgroundPic {
+    position: absolute;
+    z-index: 0;
+    top: 1572px;
+    left: 353px;
+}
+
+@media (max-width: 1236px) {
+    .container {
+        padding: 20px 5%;
+    }
+  }
+
+@media (max-width: 650px) {
+    .right {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

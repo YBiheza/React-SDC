@@ -1,0 +1,114 @@
+@import url('../../variables.css');
+
+.footer {
+  width: 100%;
+  background-color: var(--background-blue);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  font-family: var(--font-fam);
+  position: relative;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 17px;
+}
+
+.slogan {
+    font-family: var(--font-fam);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.36px;
+    color: var(--light-text)
+}
+
+.right {
+    display: flex;
+}
+
+.List {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.liTitle {
+    font-family: var(--font-fam);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    color: #08090A;
+    text-transform: uppercase;
+}
+
+.footerUlStyles {
+    display: flex;
+    flex-direction: column;
+    gap: 28px
+}
+
+.footerLiStyles {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    color: var(--light-text)
+
+}
+
+.flist {
+    margin-right: 126px;
+}
+
+.seclist {
+    margin-right: 60px;
+}
+
+.thlist {
+    margin-right: 64px;
+}
+
+.downBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 71px;
+    border-top: 1px solid #7E828F17;
+}
+
+.socialMediaBlock {
+    display: flex;
+    padding: 0 12px;
+    gap: 24px;
+}
+
+.backgroundPic {
+    position: absolute;
+    z-index: 0;
+    top: 1049px;
+    left: -8px;
+
+}

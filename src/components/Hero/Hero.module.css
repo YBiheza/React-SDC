@@ -1,0 +1,59 @@
+.main {
+  width: 100%;
+  background-image: url('../../assets/triangle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 0 140px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Inter;
+}
+
+.left {
+  width: 600px;
+  padding: 43px 0;
+}
+
+.titleText {
+  margin-top: 14px;
+  margin: 0;
+}
+
+.siteTitle {
+  margin: 0;
+  font-family: var(--font-fam);
+  font-weight: 400;
+  font-style: 'normal';
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 4.7px;
+}
+
+.paragraphText {
+  margin: 34px 67px 53px 0;
+}
+
+.paragraph {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.12px;
+  color: var(--light-text);
+  letter-spacing: 0.5px;
+}
+
+.buttonBlock {
+  margin-bottom: 30px;
+}
+
+.trustpilotText {
+  margin-top: 7px;
+  letter-spacing: 0.1px;
+}

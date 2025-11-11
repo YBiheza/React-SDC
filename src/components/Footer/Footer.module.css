@@ -3,6 +3,10 @@
 .footer {
   width: 100%;
   background-color: var(--background-blue);
+  background-image: url('../../assets/bg.png');
+  background-repeat: no-repeat;
+  background-position: top 133px left 0;
+  background-size: auto
 }
 
 .container {
@@ -15,7 +19,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 100px;
-  font-family: var(--font-fam);
   position: relative;
 }
 
@@ -33,9 +36,6 @@
 }
 
 .slogan {
-    font-family: var(--font-fam);
-    font-weight: 400;
-    font-style: Regular;
     font-size: 16px;
     line-height: 27px;
     letter-spacing: 0.36px;
@@ -46,36 +46,10 @@
     display: flex;
 }
 
-.List {
+.ListBlock {
     display: flex;
     flex-direction: column;
     gap: 28px;
-}
-
-.liTitle {
-    font-family: var(--font-fam);
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 20px;
-    letter-spacing: 1.5px;
-    color: #08090A;
-    text-transform: uppercase;
-}
-
-.footerUlStyles {
-    display: flex;
-    flex-direction: column;
-    gap: 28px
-}
-
-.footerLiStyles {
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
-    color: var(--light-text)
-
 }
 
 .flist {
@@ -105,10 +79,26 @@
     gap: 24px;
 }
 
+.socialMediaBlock a{
+    cursor:not-allowed;
+}
+
 .backgroundPic {
     position: absolute;
     z-index: 0;
-    top: 1049px;
-    left: -8px;
+    top: 1572px;
+    left: 353px;
+}
 
+@media (max-width: 1236px) {
+    .container {
+        padding: 20px 5%;
+    }
+  }
+
+@media (max-width: 650px) {
+    .right {
+        flex-direction: column;
+        gap: 40px;
+    }
 }

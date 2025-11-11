@@ -1,17 +1,13 @@
 import React from 'react';
+import styles from './Logo.module.css'
 import logo from '../../assets/logo.png';
 
-export function Logo({link}) {
+export function Logo({link = '#'}) {
   return (
-    <div className={`logo`}>
-        {link ? (
-            <a href={link}>
-                <img src={logo} alt="Company logo" />
-            </a>
-            ) : (
-            <img src={logo} alt="Company logo" />
-            )
-        }
+    <div className={styles.logoStyles}>
+      <a href={link} className={styles.logoStyles}>
+          <img src={logo} alt="Company logo" />
+      </a>
     </div>
   )
 }

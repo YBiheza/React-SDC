@@ -1,10 +1,3 @@
-/*body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}*/
 @import url('variables.css');
 
 * {
@@ -12,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  font-family: var(--font-fam);
+  font-weight: var(--font-weight);
+
 }
 
 

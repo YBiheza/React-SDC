@@ -4,7 +4,7 @@ import trustpilot from '../../assets/trustpilot.png';
 import { Button } from '../Button'
 import styles from './Hero.module.css';
 
-export function Main() {
+export function Hero() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
@@ -38,3 +38,5 @@ export function Main() {
     </main>
   );
 }
+
+export default Hero

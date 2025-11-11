@@ -1,0 +1,75 @@
+.cartStyles {
+    max-width: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    border: 1px solid #35B8BE26;
+    gap: 30px;
+    padding: 26px;
+    background-color: white;
+}
+
+.imageBlock {
+    padding: 13,5px 0;
+}
+
+.imageStyle{
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.topRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0 11px 0;
+}
+
+.cartTitle {
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    color:#08090A;
+}
+
+.priceBlock {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    color: #35B8BE;
+}
+
+.cartDescription {
+    padding: 7px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+    color: #546285;
+}
+
+.formBlock {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.goodsNumberField {
+    padding: 9px 15px;
+    max-width: 60px;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 33px;
+    text-align: center;
+    appearance: none
+}

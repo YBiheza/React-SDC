@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-export function Button ({ onClick, type = "button", variant = "primary", disabled = false, className = '', label}) {
+export function Button ({ onClick, type = "button", disabled = false, label = 'Dessert'}) {
   return (
     <button
       type={type}
-      className={`${variant} ${styles.bigButton} ${className}`}
+      className={`${styles.buttonStyles}`}
       onClick={onClick}
       disabled={disabled}
     >

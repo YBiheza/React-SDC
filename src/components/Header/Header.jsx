@@ -11,9 +11,7 @@ const navigation = [
   { name: 'Login', link: '#' }
 ];
 
-let numeric = 1;
-
-export function Header() {
+export function Header({currPage = 'Menu', quantityOfGoods}) {
   return (
     <header className="header">
       <div className={styles.container}>
@@ -22,7 +20,7 @@ export function Header() {
         </div>
         <div className={styles.right}>
           <div className={styles.menu}>
-            <List points = {navigation} activeItem = 'Home' ulStyles= {styles.navList} liStyles = {styles.navLink} activeColor = {styles.navLinkActive}/>          
+            <List points = {navigation} activeItem = {currPage} parentComponent = 'Header' disabled={true}/>          
           </div>
           <div className={styles.cartBlock}>
             <div className={styles.cart}>
@@ -31,7 +29,7 @@ export function Header() {
               </a>
             </div>
             <div className={styles.numerous}>
-                <p>{numeric}</p>
+                <p>{quantityOfGoods}</p>
             </div>
           </div>
         </div>

@@ -5,29 +5,27 @@ import styles from  './Footer.module.css';
 import inst from '../../assets/insta.png'
 import twi from '../../assets/twi.png'
 import youtube from '../../assets/youtube.png'
-import background from '../../assets/bg.png'
 
 
 const firstColumn = [
-  { name: 'Home', link: '#' },
-  { name: 'Order', link: '#' },
-  { name: 'FAQ', link: '#' },
-  { name: 'Contact', link: '#' }
+  { name: 'Home', link: '' },
+  { name: 'Order', link: '' },
+  { name: 'FAQ', link: '' },
+  { name: 'Contact', link: '' }
 ];
 const secColumn = [
-  { name: 'Style Guide', link: '#' },
-  { name: 'Changelog', link: '#' },
-  { name: 'Licence', link: '#' },
-  { name: 'Webflow University', link: '#' }
+  { name: 'Style Guide', link: 'https://www.google.com/' },
+  { name: 'Changelog', link: 'https://www.google.com/' },
+  { name: 'Licence', link: 'https://www.google.com/' },
+  { name: 'Webflow University', link: 'https://www.google.com/' }
 ];
 const thirdColumn = [
-  { name: 'More Cloneables', link: '#' }
+  { name: 'More Cloneables', link: '' }
 ];
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <img src={background} alt='background' className={styles.backgroundPic} />
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.left}>
@@ -38,14 +36,14 @@ export function Footer() {
             </div>
           </div>
           <div className={styles.right}>
-            <div className={`${styles.List} ${styles.flist}`}>
-              <List points = {firstColumn} listTitle = 'Company' liTitleStyles = {styles.liTitle} activeItem = '' ulStyles = {styles.footerUlStyles} liStyles = {styles.footerLiStyles} activeColor = {styles.footerLiStyles} />            
+            <div className={`${styles.ListBlock} ${styles.flist}`}>
+              <List points = {firstColumn} listTitle = 'Company' disabled={true} parentComponent = 'Footer'  />            
             </div>
-            <div className={`${styles.List} ${styles.seclist}`}>
-              <List points = {secColumn} listTitle = 'Template' liTitleStyles = {styles.liTitle} activeItem = '' ulStyles = {styles.footerUlStyles} liStyles = {styles.footerLiStyles} activeColor = {styles.footerLiStyles} />            
+            <div className={`${styles.ListBlock} ${styles.seclist}`}>
+              <List points = {secColumn} listTitle = 'Template'  parentComponent = 'Footer' />            
             </div>
-            <div className={`${styles.List} ${styles.thlist}`}>
-              <List points = {thirdColumn} listTitle = 'Flowbase' liTitleStyles = {styles.liTitle} activeItem = '' ulStyles = {styles.footerUlStyles} liStyles = {styles.footerLiStyles} activeColor = {styles.footerLiStyles} />            
+            <div className={`${styles.ListBlock} ${styles.thlist}`}>
+              <List points = {thirdColumn} listTitle = 'Flowbase' disabled={true} parentComponent = 'Footer' />            
             </div>
           </div>
         </div>
@@ -56,12 +54,14 @@ export function Footer() {
             </p>
           </div>
           <div className={styles.socialMediaBlock}>
-            <img src={inst} alt='instagram icon' />
-            <img src={ twi } alt='twi icon' />
-            <img src={ youtube } alt='youtube icon' />
+            <a href = ''><img src={inst} alt='follow our instagram' /></a>
+            <a href = ''><img src={ twi } alt='follow our twitter' /></a>
+            <a href = ''><img src={ youtube } alt='youtube icon' /></a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
+export default Footer

@@ -13,7 +13,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: Inter;
 }
 
 .left {
@@ -28,8 +27,6 @@
 
 .siteTitle {
   margin: 0;
-  font-family: var(--font-fam);
-  font-weight: 400;
   font-style: 'normal';
   font-size: 60px;
   line-height: 60px;
@@ -42,7 +39,6 @@
 
 .paragraph {
   margin: 0;
-  font-weight: 400;
   font-size: 18px;
   line-height: 24.12px;
   color: var(--light-text);

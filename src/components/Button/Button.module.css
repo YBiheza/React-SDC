@@ -1,10 +1,6 @@
-.bigButton {
-  width: 193px;
+.buttonStyles {
   padding: 19px 35px;
-
   color: white;
-  font-family: Inter;
-  font-weight: 400;
   font-size: 17px;
   line-height: 20px;
   text-align: center;
@@ -12,4 +8,13 @@
   background-color: var(--main-color);
   border-radius: 6px;
   border-style: none;
+  cursor: pointer;
 }
+
+button:disabled {
+  border: 1px solid #61728333;
+  cursor: not-allowed;
+  background-color: transparent;
+  color: #222222;
+}
+

@@ -9,6 +9,7 @@
   border-radius: 6px;
   border-style: none;
   cursor: pointer;
+  transition: opacity 5s ease;
 }
 
 button:disabled {
@@ -18,3 +19,12 @@ button:disabled {
   color: #222222;
 }
 
+.currButton {
+  background-color: transparent;
+  border: 1px solid #61728333;
+  color: #222222;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  transition: opacity 5s ease;
+}

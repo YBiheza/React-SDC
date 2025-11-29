@@ -16,8 +16,8 @@ function App() {
 
   return (
     <>
-      <Header currPage = 'Menu' quantityOfGoods={cartCount}/>
-      <Menu onAddToCart = {handleAddToCart}/>
+      <Header currPage='Menu' quantityOfGoods={cartCount}/>
+      <Menu onAddToCart={handleAddToCart}/>
       <Footer/>
     </>
   );

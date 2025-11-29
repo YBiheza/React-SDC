@@ -1,6 +1,6 @@
 import styles from './Menu.module.css'
 import { Button } from '../Button'
-import { Cart } from '../Cart/Cart'
+import { Card } from '../Cart/Card'
 
 import React, { useEffect, useState } from 'react';
 
@@ -38,6 +38,7 @@ export function Menu ({ onAddToCart }) {
     if (error) return <p>Error: {error}</p>;
 
     const visibleMeals = filteredMeals(meals, selectedCategory).slice(0, visibleCount);
+    const categories = [...new Set(meals.map(item => item.category))];
 
     const handleShowMore = () => setVisibleCount(prev => prev + 6);
 
@@ -59,17 +60,16 @@ export function Menu ({ onAddToCart }) {
                     </p>
                 </div>
                 <div className={styles.buttonBlock}>
-                    {['Dessert', 'Dinner', 'Breakfast'].map((cat) => (
-                        <Button key={cat} label={cat}
-                        disabled={true}                        
+                    {categories.map((cat) => (
+                        <Button key={cat} label={cat}                      
                         onClick={() => handleCategorySelect(cat)}
-                        className={selectedCategory === cat ? styles.activeButton : ''}
+                        current = {selectedCategory === cat ? true : false }
                         />
                     ))}
                 </div>
                 <div className={styles.cartBlock}>
                     {visibleMeals.map((meal) => (
-                        <Cart key={meal.id} name={meal.meal} onAddToCart={onAddToCart} category={meal.category} description={meal.instructions} price = {`$ ${meal.price} USD`} goodsNumber='1' image = {meal.img}/>           
+                        <Card key={meal.id} name={meal.meal} onAddToCart={onAddToCart} category={meal.category} description={meal.instructions} price = {`$ ${meal.price} USD`} goodsNumber='1' image = {meal.img}/>           
                     ))}
                 </div>
                 {visibleCount < filteredMeals(meals, selectedCategory).length && (

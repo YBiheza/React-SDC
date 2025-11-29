@@ -1,2 +1,2 @@
-import Cart from './Cart'
-export { Cart }
+import Card from './Cart'
+export { Card }

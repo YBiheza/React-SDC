@@ -1,4 +1,4 @@
-.cartStyles {
+.cardStyles {
     max-width: 580px;
     display: flex;
     align-items: center;
@@ -8,6 +8,7 @@
     gap: 30px;
     padding: 26px;
     background-color: white;
+    min-height: 200px;
 }
 
 .imageBlock {
@@ -33,7 +34,7 @@
     padding: 8px 0 11px 0;
 }
 
-.cartTitle {
+.cardTitle {
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.6px;
@@ -47,7 +48,7 @@
     color: #35B8BE;
 }
 
-.cartDescription {
+.cardDescription {
     padding: 7px 0;
     font-weight: 400;
     font-size: 16px;

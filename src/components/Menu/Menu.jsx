@@ -3,6 +3,8 @@ import { Button } from '../Button'
 import { Card } from '../Cart/Card'
 
 import React, { useEffect, useState } from 'react';
+import useFetch  from '../../hooks/useFetch'
+
 
 function filteredMeals (meals, selectedCategory) {
     let filteredMeals = meals.filter(meal => meal.category === selectedCategory)
@@ -10,30 +12,11 @@ function filteredMeals (meals, selectedCategory) {
 };
 
 export function Menu ({ onAddToCart }) {
-    const [meals, setMeals] = useState([]); 
-    const [error, setError] = useState(null); 
-    const [loading, setLoading] = useState(true);
-
     const [visibleCount, setVisibleCount] = useState(6);
     const [selectedCategory, setSelectedCategory] = useState('Dessert');
 
-    useEffect(() => {
-        async function fetchMeals() {
-            try {
-                const response = await fetch ('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals')
-                if (!response.ok) throw new Error('Ошибка при загрузке данных');
-                const data = await response.json();
-                setMeals(data);       
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        fetchMeals();
-    }, []);
-
+    const [meals, loading, error] = useFetch('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals')
+    
     if (loading) return <p>Loading meals...</p>;
     if (error) return <p>Error: {error}</p>;
 

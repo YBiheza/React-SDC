@@ -7,7 +7,7 @@ function truncate(str, maxlength) {
     str.slice(0, maxlength - 1) + '…' : str;
 }
 
-export function Card ({key, category, onAddTocard, name, description, price, image}) {
+export function Card ({key, category, onAddToCart, name, description, price, image}) {
 
     const [inputValue, setInputValue] = useState(1);
 
@@ -16,7 +16,7 @@ export function Card ({key, category, onAddTocard, name, description, price, ima
     };
 
     const handleAdd = () => {
-        onAddTocard(Number(inputValue));
+        onAddToCart(Number(inputValue));
     };
 
     const truncName = useMemo(() => {

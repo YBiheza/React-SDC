@@ -28,3 +28,9 @@ button:disabled {
   letter-spacing: 0%;
   transition: opacity 5s ease;
 }
+
+.cancelButton {
+  background-color: transparent;
+  border: 1px solid #61728333;
+  color: #222222;
+}

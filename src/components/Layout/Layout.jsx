@@ -1,9 +1,9 @@
 import { Header } from '../Header'
-import { Menu } from '../Menu'
 import { Footer } from '../Footer'
+import { Outlet } from 'react-router-dom'
 import { useState } from 'react';
 
-export function Menupage () {
+export function Layout () {
 
     const [cartCount, setCartCount] = useState(0);
 
@@ -13,8 +13,14 @@ export function Menupage () {
 
 
     return (
-        <Menu onAddToCart = {handleAddToCart}/>
+        <>
+            <Header quantityOfGoods={cartCount}/>
+            <main>
+                <Outlet context={{ onAddToCart: handleAddToCart }}/>
+            </main>
+            <Footer/>
+        </>
     )
 }
 
-export default Menupage
+export default Layout

@@ -14,6 +14,7 @@ function useFetch (url, options) {
     useEffect(() => {
         setError(null);
         setLoading(true);
+
         async function fetchMeals() {
             const payload = options?.body || null;
 
@@ -40,7 +41,8 @@ function useFetch (url, options) {
             }
         };
         fetchMeals();
-    }, []);
+
+    },[]);
     return [meals, loading, error];
 };
 

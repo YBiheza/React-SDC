@@ -2,23 +2,36 @@ import './App.css';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Footer } from './components/Footer/Footer';
-import { Menu } from './components/Menu/Menu'
+import { LoginPage } from './components/pages/LoginPage';
+import { Menupage } from './components/pages/Menupage';
+import { Homepage } from './components/pages/Homepage'
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from "./components/Layout/Layout"
+import { OrderPage } from './components/pages/OrderPage'
+import { PrivateRoute } from './routes/PrivateRoute'
 
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
-
-  const handleAddToCart = (count = 1) => {
-    setCartCount(prev => Number(prev) + Number(count));
-  };
-
 
   return (
     <>
-      <Header currPage='Menu' quantityOfGoods={cartCount}/>
-      <Menu onAddToCart={handleAddToCart}/>
-      <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route element={ <Layout />} path="/">
+            <Route element={<LoginPage/>} path="authorisation" />
+            <Route element={<Homepage/>} index />
+            <Route element={<Menupage/>} path="menu" />
+            <Route element="Order page" path="order" />
+            <Route path="cart" element={
+              <PrivateRoute>
+                <OrderPage />
+              </PrivateRoute>
+            }>
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

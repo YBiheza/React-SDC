@@ -4,11 +4,7 @@ import { Footer } from '../Footer'
 
 export function Homepage () {
     return (
-        <>
-            <Header currPage = 'Home'/>
-            <Hero />
-            <Footer />
-        </>
+        <Hero />
     )
 }
 

@@ -16,6 +16,10 @@ export function Card ({key, category, onAddToCart, name, description, price, ima
     };
 
     const handleAdd = () => {
+            if (typeof onAddToCart !== 'function') {
+      console.error('onAddToCart is not a function', onAddToCart);
+      return;
+    }
         onAddToCart(Number(inputValue));
     };
 

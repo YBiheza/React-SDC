@@ -3,15 +3,16 @@ import { Logo } from '../Logo'
 import { List } from '../List'
 import styles from './Header.module.css';
 import Cart from '../../assets/Vector.png';
+import { NavLink } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Home', link: '#' },
-  { name: 'Menu', link: '#' },
-  { name: 'Company', link: '#' },
-  { name: 'Login', link: '#' }
+  { name: 'Home', link: '' },
+  { name: 'Menu', link: '/menu' },
+  { name: 'Company', link: '/order' },
+  { name: 'Login', link: '/authorisation' }
 ];
 
-export function Header({currPage = 'Menu', quantityOfGoods}) {
+export function Header({quantityOfGoods=0}) {
   return (
     <header className="header">
       <div className={styles.container}>
@@ -20,13 +21,13 @@ export function Header({currPage = 'Menu', quantityOfGoods}) {
         </div>
         <div className={styles.right}>
           <div className={styles.menu}>
-            <List points = {navigation} activeItem = {currPage} parentComponent = 'Header' disabled={true}/>          
+            <List points = {navigation} parentComponent = 'Header' disabled={true}/>          
           </div>
           <div className={styles.cartBlock}>
             <div className={styles.cart}>
-              <a href = '#'>
+              <NavLink to='cart'>
                 <img src={Cart} alt="cart picture" className={styles.cartImg} />
-              </a>
+              </NavLink>
             </div>
             <div className={styles.numerous}>
                 <p>{quantityOfGoods}</p>

@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './List.module.css';
+import { Link, NavLink } from 'react-router-dom';
 
-export function List({points, disabled = '', listTitle, activeItem, parentComponent}) {
+export function List({points, disabled = '', listTitle, parentComponent}) {
 
   const ulStyles = parentComponent === 'Footer' ?  styles.footerUlStyles : styles.navList;
   const liStyles = parentComponent === 'Footer' ?  styles.footerLiStyles : styles.navLink;
   const liTitleStyles = parentComponent === 'Footer' ?  styles.footerLiTitle : '';
-  const activeItemStyle = parentComponent === 'Header' ?  styles.navLinkActive : '';
   
   return (
     <>
@@ -15,7 +15,7 @@ export function List({points, disabled = '', listTitle, activeItem, parentCompon
         {points.map(point => {
           return (
             <li key={point.name}>
-              <a href={point.link} className={`${liStyles} ${disabled === true ? styles.disabled : ''} ${point.name === activeItem ? activeItemStyle : ''}` }>{point.name}</a>
+              <NavLink to={point.link} className={`${liStyles} ${disabled === true ? styles.disabled : ''}` }>{point.name}</NavLink>
             </li>
           )
         })}

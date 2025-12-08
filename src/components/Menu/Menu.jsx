@@ -2,20 +2,23 @@ import styles from './Menu.module.css'
 import { Button } from '../Button'
 import { Card } from '../Cart/Card'
 
+
 import React, { useEffect, useState } from 'react';
 import useFetch  from '../../hooks/useFetch'
-
+import { useOutletContext } from "react-router-dom";
 
 function filteredMeals (meals, selectedCategory) {
     let filteredMeals = meals.filter(meal => meal.category === selectedCategory)
     return filteredMeals;
 };
 
-export function Menu ({ onAddToCart }) {
+export function Menu () {
+    const { onAddToCart } = useOutletContext();
+
     const [visibleCount, setVisibleCount] = useState(6);
     const [selectedCategory, setSelectedCategory] = useState('Dessert');
 
-    const [meals, loading, error] = useFetch('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals')
+    const [meals, loading, error] = useFetch('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals', [])
     
     if (loading) return <p>Loading meals...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -62,3 +65,5 @@ export function Menu ({ onAddToCart }) {
         </main>
     )
 }
+
+export default Menu

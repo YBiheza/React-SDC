@@ -21,7 +21,7 @@ export function Hero() {
             </p>
           </div>
           <div className={styles.buttonBlock}>
-            <Button label = {'Place an order'}/>
+            <Button label = {'Place an order'} disabled={true}/>
           </div>
           <div className={styles.ratingBlock}>
             <img src={trustpilot} alt="rating image" className={styles.TrustpilotImg} />

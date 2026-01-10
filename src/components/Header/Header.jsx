@@ -4,15 +4,22 @@ import { List } from '../List'
 import styles from './Header.module.css';
 import Cart from '../../assets/Vector.png';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const navigation = [
   { name: 'Home', link: '' },
   { name: 'Menu', link: '/menu' },
-  { name: 'Company', link: '/order' },
+  { name: 'Company', link: '' },
   { name: 'Login', link: '/authorisation' }
 ];
 
-export function Header({quantityOfGoods=0}) {
+
+export function Header() {
+
+  const cartItems = useSelector(state => state.cart.cartItems);
+
+  const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <header className="header">
       <div className={styles.container}>
@@ -25,12 +32,12 @@ export function Header({quantityOfGoods=0}) {
           </div>
           <div className={styles.cartBlock}>
             <div className={styles.cart}>
-              <NavLink to='cart'>
+              <NavLink to='/OrderPage'>
                 <img src={Cart} alt="cart picture" className={styles.cartImg} />
               </NavLink>
             </div>
             <div className={styles.numerous}>
-                <p>{quantityOfGoods}</p>
+                <p>{totalCount}</p>
             </div>
           </div>
         </div>

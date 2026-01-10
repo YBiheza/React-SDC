@@ -1,0 +1,84 @@
+@import '../../variables.css';
+
+.main {
+    background: var(--background-blue);
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 140px 0 230px 0;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.container::before {
+    background-color: white;
+    content: '';
+    position: absolute;
+    width: 99%;
+    height: 200px;
+    top: -156px;
+    transform: rotate(356deg);
+    z-index: -1
+}
+
+.titleStyles {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 46px;
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: 1.65px;
+    color: var(--main-color);
+}
+
+.cardsBlock {
+    /*width: 82%;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/*.card {
+    width: 100%;
+}*/
+
+.addressBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addressLine {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.streetLine {
+    margin-bottom: 22px;
+}
+
+.houseLine {
+    margin-bottom: 35px;
+}
+
+.addressLabel {
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    color: #08090A;
+}
+
+.input {
+    max-width: 430px;
+    padding: 3px 7px;
+    background-color: #fafafa;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+}

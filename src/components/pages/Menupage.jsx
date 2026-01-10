@@ -5,15 +5,15 @@ import { useState } from 'react';
 
 export function Menupage () {
 
-    const [cartCount, setCartCount] = useState(0);
+    /*const [cartCount, setCartCount] = useState(0);
 
     const handleAddToCart = (count = 1) => {
         setCartCount(prev => Number(prev) + Number(count));
-    };
+    };*/
 
 
     return (
-        <Menu onAddToCart = {handleAddToCart}/>
+        <Menu/>
     )
 }
 

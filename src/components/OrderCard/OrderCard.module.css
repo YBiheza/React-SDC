@@ -1,0 +1,64 @@
+@import '../../variables.css';
+
+.cardStyles {
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*gap: 545px;*/
+    padding: 40px 26px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #35B8BE26;
+    border-radius: 6px;
+}
+
+.leftBlock {
+    width: 50%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: left;
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+}
+
+.name {
+    white-space: nowrap;
+}
+
+.rightBlock {
+    width: 55%;
+    display: flex;
+    gap: 55px;
+    align-items: center;
+    justify-content: right;
+}
+
+.buttonBlock {
+    display: flex;
+    gap: 34px;
+    align-items: center;
+}
+
+.price {
+    color: var(--main-color)
+}
+
+.inputBlock {
+    padding: 9px 15px;
+    max-width: 60px;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 33px;
+    text-align: center;
+    appearance: none
+}

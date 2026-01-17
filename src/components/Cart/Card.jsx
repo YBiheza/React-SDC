@@ -1,13 +1,15 @@
 import styles from './Card.module.css'
 import { Button } from '../Button'
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../../store/cartSlice';
 
 function truncate(str, maxlength) {
     return (str.length > maxlength) ?
     str.slice(0, maxlength - 1) + '…' : str;
 }
 
-export function Card ({key, category, onAddToCart, name, description, price, image}) {
+export function Card ({key, id, category, name, description, price, image}) {
 
     const [inputValue, setInputValue] = useState(1);
 
@@ -15,12 +17,17 @@ export function Card ({key, category, onAddToCart, name, description, price, ima
         setInputValue(event.target.value);
     };
 
+    const dispatch = useDispatch();
+
     const handleAdd = () => {
-            if (typeof onAddToCart !== 'function') {
-      console.error('onAddToCart is not a function', onAddToCart);
-      return;
-    }
-        onAddToCart(Number(inputValue));
+        dispatch(addToCart({
+            id,
+            name,
+            price,
+            image,
+            quantity: Number(inputValue)
+            }
+        ))
     };
 
     const truncName = useMemo(() => {

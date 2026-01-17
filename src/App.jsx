@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from "./components/Layout/Layout"
 import { OrderPage } from './components/pages/OrderPage'
 import { PrivateRoute } from './routes/PrivateRoute'
-
+import { OrderSection } from './components/OrderSection';
 
 function App() {
 
@@ -22,10 +22,9 @@ function App() {
             <Route element={<LoginPage/>} path="authorisation" />
             <Route element={<Homepage/>} index />
             <Route element={<Menupage/>} path="menu" />
-            <Route element="Order page" path="order" />
-            <Route path="cart" element={
+            <Route path="OrderPage" element={
               <PrivateRoute>
-                <OrderPage />
+                <OrderPage/>
               </PrivateRoute>
             }>
             </Route>

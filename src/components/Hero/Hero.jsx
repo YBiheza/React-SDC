@@ -3,6 +3,7 @@ import mockup from '../../assets/mockup.png';
 import trustpilot from '../../assets/trustpilot.png';
 import { Button } from '../Button'
 import styles from './Hero.module.css';
+import { NavLink } from 'react-router-dom';
 
 export function Hero() {
   return (
@@ -21,7 +22,9 @@ export function Hero() {
             </p>
           </div>
           <div className={styles.buttonBlock}>
-            <Button label = {'Place an order'} disabled={true}/>
+            <NavLink to="/OrderPage" >
+              <Button label = {'Place an order'} />
+            </NavLink>
           </div>
           <div className={styles.ratingBlock}>
             <img src={trustpilot} alt="rating image" className={styles.TrustpilotImg} />

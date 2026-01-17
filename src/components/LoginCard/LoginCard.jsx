@@ -3,27 +3,33 @@ import styles from './LoginCard.module.css'
 import { Button } from '../Button'
 import { useState } from 'react';
 import { login, register } from './authentication'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { LogIn, LoginFail } from '../../store/authSlice';
 
 export function LoginCard (isLogin){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     
-    console.log(isLogin)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             if(isLogin) {
                 await login(email, password);
-                alert('Successfully logged in');
+                dispatch(LogIn())
+                navigate("/OrderPage");            
             } else {
                 await register(email, password);
-                alert('Successfully registered')
+                alert('Successfully registered');
+                navigate("/OrderPage/");  
             }
         } 
         catch (err) {
             console.error("Firebase error:", err);
-            alert(err.message);
+            dispatch(LoginFail)
         }
     }
  
@@ -42,7 +48,7 @@ export function LoginCard (isLogin){
                     <input type="password" className={styles.field} placeholder='Password'onChange={(e) => setPassword(e.target.value)}/>
                 </label>
                 <div className={styles.buttonRow}>
-                    <button type="submit">Submit</button>
+                    <Button label="Submit" onClick={handleSubmit}/>
                     <Button label='Cancel'/>
                 </div>
             </form>

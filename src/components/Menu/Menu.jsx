@@ -1,11 +1,9 @@
 import styles from './Menu.module.css'
 import { Button } from '../Button'
 import { Card } from '../Cart/Card'
-
-
 import React, { useEffect, useState } from 'react';
-import useFetch  from '../../hooks/useFetch'
-import { useOutletContext } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMeals } from '../../store/mealsSlice';
 
 function filteredMeals (meals, selectedCategory) {
     let filteredMeals = meals.filter(meal => meal.category === selectedCategory)
@@ -13,26 +11,35 @@ function filteredMeals (meals, selectedCategory) {
 };
 
 export function Menu () {
-    const { onAddToCart } = useOutletContext();
 
-    const [visibleCount, setVisibleCount] = useState(6);
-    const [selectedCategory, setSelectedCategory] = useState('Dessert');
+    const log = useSelector(state => state.auth.log)
 
-    const [meals, loading, error] = useFetch('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals', [])
+    console.log(log)
+
+    const dispatch = useDispatch();
+    const { items: meals, loading, error } = useSelector(state => state.meals);
+
+    useEffect (() => {
+        dispatch(fetchMeals());
+    }, [dispatch]);
     
-    if (loading) return <p>Loading meals...</p>;
-    if (error) return <p>Error: {error}</p>;
-
-    const visibleMeals = filteredMeals(meals, selectedCategory).slice(0, visibleCount);
-    const categories = [...new Set(meals.map(item => item.category))];
-
+    const [visibleCount, setVisibleCount] = useState(6);
     const handleShowMore = () => setVisibleCount(prev => prev + 6);
+    const [selectedCategory, setSelectedCategory] = useState('Dessert');
+    const categories = [...new Set(meals.map(item => item.category))];
 
     const handleCategorySelect = (category) => {
         setSelectedCategory(category);
         setVisibleCount(6);
     };
-    
+
+    const visibleMeals = filteredMeals(meals, selectedCategory).slice(0, visibleCount);
+
+    if (loading) return <p>Loading meals...</p>;
+    if (error) return <p>Error: {error}</p>;
+
+
+
     
     return (
         <main className={styles.main}>
@@ -55,7 +62,7 @@ export function Menu () {
                 </div>
                 <div className={styles.cartBlock}>
                     {visibleMeals.map((meal) => (
-                        <Card key={meal.id} name={meal.meal} onAddToCart={onAddToCart} category={meal.category} description={meal.instructions} price = {`$ ${meal.price} USD`} goodsNumber='1' image = {meal.img}/>           
+                        <Card key={meal.id} id={meal.id} name={meal.meal} category={meal.category} description={meal.instructions} price = {`$ ${meal.price} USD`} goodsNumber='1' image = {meal.img}/>           
                     ))}
                 </div>
                 {visibleCount < filteredMeals(meals, selectedCategory).length && (

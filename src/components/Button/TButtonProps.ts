@@ -1,12 +1,13 @@
-import type { ButtonHTMLAttributes } from "react"
+import type { ButtonHTMLAttributes } from 'react';
 
 type TButtonProps = {
-    type: string,
-    disabled: boolean,
-    label: string, 
-    current?: boolean,
-    cancel?: boolean,
-    inactive?: boolean,
-} & ButtonHTMLAttributes<HTMLButtonElement>
+  type: string;
+  disabled: boolean;
+  label: string;
+  current?: boolean;
+  cancel?: boolean;
+  inactive?: boolean;
+  toggle?: boolean;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type { TButtonProps }
+export type { TButtonProps };

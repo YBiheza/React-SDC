@@ -1,5 +1,5 @@
 type TLoginCard = {
-    isLogin: boolean;
-}
+  isLogin: boolean;
+};
 
-export type { TLoginCard }
+export type { TLoginCard };

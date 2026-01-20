@@ -1,2 +1,2 @@
-import Logo from './Logo'
-export {Logo}
+import Logo from './Logo';
+export { Logo };

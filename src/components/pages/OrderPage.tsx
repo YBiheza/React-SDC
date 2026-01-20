@@ -1,10 +1,8 @@
-import React from "react";
-import { OrderSection } from "../OrderSection/OrderSection";
+import React from 'react';
+import { OrderSection } from '../OrderSection/OrderSection';
 
-export function OrderPage () {
-    return (
-        <OrderSection/>
-    )
+export function OrderPage() {
+  return <OrderSection />;
 }
 
-export default OrderPage
+export default OrderPage;

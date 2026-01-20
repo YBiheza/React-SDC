@@ -1,9 +1,9 @@
 type TOrderCard = {
-    id: string,
-    name: string,
-    price: string,
-    image: string,
-    quantity: number,
-}
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  quantity: number;
+};
 
-export type { TOrderCard }
+export type { TOrderCard };

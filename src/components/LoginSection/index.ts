@@ -1,3 +1,2 @@
-import LoginSection from './LoginSection'
-export {LoginSection}
-
+import LoginSection from './LoginSection';
+export { LoginSection };

@@ -1,7 +1,7 @@
 @import url(../../variables.css);
 
 .main {
-    background-color: #F5FBFC;
+  background-color: var(--background-light);
 }
 
 .container {
@@ -20,78 +20,77 @@
 }
 
 .container::before {
-    background-color: white;
-    content: '';
-    position: absolute;
-    width: 99%;
-    height: 200px;
-    top: -156px;
-    transform: rotate(356deg);
-    z-index: -1
+  background-color: var(--light-accent);
+  content: '';
+  position: absolute;
+  width: 99%;
+  height: 200px;
+  top: -156px;
+  transform: rotate(356deg);
+  z-index: -1;
 }
 
 .textBlock {
-    max-width: 670px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3px 0 13px 0;
-    gap: 26px;
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px 0 13px 0;
+  gap: 26px;
 }
 
 .pageTitle {
-    font-size: 50px;
-    line-height: 55px;
-    letter-spacing: 3.65px;
-    text-align: center;
-    color: #35B8BE;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 3.65px;
+  text-align: center;
+  color: var(--main-color);
 }
 
 .menuDescription {
-    max-width: 466px;
-    font-size: 16px;
-    line-height: 27px;
-    letter-spacing: 0.36px;
-    text-align: center;
-    color: #546285;
-    position: relative;
+  max-width: 466px;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.36px;
+  text-align: center;
+  color: var(--light-text);
+  position: relative;
 }
 
 .buttonBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .cartBlock {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 20px;
-    transition: 2s;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  transition: 2s;
 }
 
-.phoneTooltip{
-    width: 150px;
-    font-size: 12px;
-    color: #ffffff;
-    position: absolute;
-    visibility: hidden;
-    background-color: var(--main-color);
-    border-radius: 6px;
-    padding: 5px 10px;
-
+.phoneTooltip {
+  width: 150px;
+  font-size: 12px;
+  color: var(--light-accent);
+  position: absolute;
+  visibility: hidden;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  padding: 5px 10px;
 }
 
 .phone:hover .phoneTooltip {
-    visibility: visible;
+  visibility: visible;
 }
 
 @media (max-width: 1236px) {
-    .cartBlock {
-        flex-direction: column;
-    }
+  .cartBlock {
+    flex-direction: column;
   }
+}

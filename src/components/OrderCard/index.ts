@@ -1,2 +1,2 @@
-import OrderCard from "./OrderCard";
-export { OrderCard }
+import OrderCard from './OrderCard';
+export { OrderCard };

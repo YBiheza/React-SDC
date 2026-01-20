@@ -1,8 +1,11 @@
+@import url(../../variables.css);
+
 .main {
-  width: 100%;
-  background-image: url('../../assets/triangle.svg');
+  /*width: 100%;*/
+  /*background-image: url('../../assets/triangle.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
+  background-color: var(--background-light);
 }
 
 .container {
@@ -13,6 +16,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  color: var(--medium-text);
+}
+
+.container::before {
+  background-color: var(--light-accent);
+  content: '';
+  position: absolute;
+  width: 99%;
+  height: 200px;
+  top: -156px;
+  transform: rotate(356deg);
+  z-index: -1;
 }
 
 .left {

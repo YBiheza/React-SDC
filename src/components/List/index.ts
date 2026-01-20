@@ -1,2 +1,2 @@
-import List from './List'
-export { List }
+import List from './List';
+export { List };

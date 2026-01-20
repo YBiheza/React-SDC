@@ -1,2 +1,2 @@
-import OrderSection from "./OrderSection"
-export { OrderSection }
+import OrderSection from './OrderSection';
+export { OrderSection };

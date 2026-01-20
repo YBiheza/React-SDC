@@ -1,6 +1,6 @@
 type TInitial = {
-    log: boolean,
-    error: string | null,
-}
+  log: boolean;
+  error: string | null;
+};
 
-export type { TInitial }
+export type { TInitial };

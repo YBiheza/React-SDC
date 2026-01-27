@@ -1,5 +1,5 @@
 type Point = {
-  name: string;
+  nameKey: string;
   link: string;
 };
 

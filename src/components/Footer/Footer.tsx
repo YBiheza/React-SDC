@@ -6,22 +6,24 @@ import inst from '../../assets/insta.png';
 import twi from '../../assets/twi.png';
 import youtube from '../../assets/youtube.png';
 import { Blobs } from './Blobs';
+import { Trans, useTranslation } from 'react-i18next';
 
 const firstColumn = [
-  { name: 'Home', link: '' },
-  { name: 'Order', link: '' },
-  { name: 'FAQ', link: '' },
-  { name: 'Contact', link: '' },
+  { nameKey: 'footer.home', link: '' },
+  { nameKey: 'footer.order', link: '' },
+  { nameKey: 'footer.FAQ', link: '' },
+  { nameKey: 'footer.contact', link: '' },
 ];
 const secColumn = [
-  { name: 'Style Guide', link: 'https://www.google.com/' },
-  { name: 'Changelog', link: 'https://www.google.com/' },
-  { name: 'Licence', link: 'https://www.google.com/' },
-  { name: 'Webflow University', link: 'https://www.google.com/' },
+  { nameKey: 'footer.styleGuide', link: 'https://www.google.com/' },
+  { nameKey: 'footer.changelog', link: 'https://www.google.com/' },
+  { nameKey: 'footer.licence', link: 'https://www.google.com/' },
+  { nameKey: 'footer.university', link: 'https://www.google.com/' },
 ];
-const thirdColumn = [{ name: 'More Cloneables', link: '' }];
+const thirdColumn = [{ nameKey: 'footer.moreCloneables', link: '' }];
 
 export function Footer() {
+  const {t, i18n} = useTranslation();
   return (
     <footer className={styles.footer}>
       <Blobs />
@@ -30,8 +32,8 @@ export function Footer() {
           <div className={styles.left}>
             <Logo link="#" />
             <div className={styles.slogan}>
-              <p className="slogan-title">Takeaway & Delivery template</p>
-              <p className="slogan-text">for small - medium businesses.</p>
+              <p className="slogan-title">{t('footer.template')}</p>
+              <p className="slogan-text">{t('footer.forBusiness')}</p>
             </div>
           </div>
           <div className={styles.right}>
@@ -49,7 +51,12 @@ export function Footer() {
         <div className={styles.downBlock}>
           <div className={styles.copyright}>
             <p>
-              Built by <span>Flowbase</span> · Powered by <span>Webflow</span>
+              <Trans i18nKey='footer.buildBy'
+                components={{
+                  flowbase: <span/>,
+                  webflow: <span />,
+                }}
+              />
             </p>
           </div>
           <div className={styles.socialMediaBlock}>

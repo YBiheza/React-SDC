@@ -5,9 +5,12 @@ import { Button } from '../Button';
 import styles from './Hero.module.css';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 
 export function Hero() {
   const navigate = useNavigate();
+
+  const {t, i18n} = useTranslation();
 
   return (
     <main className={styles.main}>
@@ -15,20 +18,22 @@ export function Hero() {
         <div className={styles.left}>
           <div className={styles.titleText}>
             <p className={styles.siteTitle}>
-              Beautiful food & takeaway, <span className={styles.spanText}>delivered</span> to your
-              door.
+              <Trans i18nKey = 'hero.leadText'
+              components={{
+                delivery: <span className={styles.spanText} />
+              }}
+              />
             </p>
           </div>
           <div className={styles.paragraphText}>
             <p className={styles.paragraph}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500.
+              {t('hero.loremIpsum')}
             </p>
           </div>
           <div className={styles.buttonBlock}>
             <Button
               onClick={() => navigate('/OrderPage')}
-              label={'Place an order'}
+              label={t('hero.orderButton')}
               type={'submit'}
               disabled={false}
             />
@@ -36,8 +41,11 @@ export function Hero() {
           <div className={styles.ratingBlock}>
             <img src={trustpilot} alt="rating image" className={styles.TrustpilotImg} />
             <p className={styles.trustpilotText}>
-              <span className={`${styles.trustpilotText} ${styles.spanText}`}>4.8 out of 5 </span>
-              based on 2000+ reviews
+              <Trans i18nKey="hero.ratingText" 
+                components={{
+                  trustpilot: <span className={`${styles.trustpilotText} ${styles.spanText}`}/>
+                }}
+              />
             </p>
           </div>
         </div>

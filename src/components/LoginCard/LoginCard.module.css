@@ -1,45 +1,49 @@
 @import url('../../variables.css');
 
 .card {
-    max-width: 700px;
-    background-color: #ffffff;
-    border: 1px solid #35B8BE26;
-    border-radius: 6px;
+  max-width: 700px;
+  background-color: var(--light-accent);
+  border: 1px solid var(--dark-borders);
+  border-radius: 6px;
 }
 
 .content {
-    margin: 40px 68px;
-    display: flex;
-    flex-direction: column;
+  margin: 40px 68px;
+  display: flex;
+  flex-direction: column;
 }
 
 .userNameRow {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .field {
-    width: 430px;
-    border-radius: 6px;
-    border-width: 1px;
-    padding: 10px 17px 9px 17px;
-    border: 1px solid #DDDDDD;
-    background: #FAFAFA;
-    color: #000000;
-    font-size: 16px;
-    line-height: 27px;
+  width: 430px;
+  border-radius: 6px;
+  border-width: 1px;
+  padding: 10px 17px 9px 17px;
+  border: 1px solid var(--light-borders);
+  background: var(--inputs-color);
+  color: var(--dark-text);
+  font-size: 16px;
+  line-height: 27px;
 }
 
-.row{
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    align-items: center;
+.row {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .buttonRow {
-    margin-top: 37px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
+  margin-top: 37px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.labels {
+  color: var(--medium-text);
 }

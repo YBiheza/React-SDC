@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-type TPrivateRouteProps = {
+type TThemeProviderProps = {
   children: ReactNode;
 };
 
-export type { TPrivateRouteProps };
+export type { TThemeProviderProps };

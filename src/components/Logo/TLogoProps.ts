@@ -1,5 +1,5 @@
 type TLogoProps = {
-    link: string;
-}
+  link: string;
+};
 
-export type { TLogoProps }
+export type { TLogoProps };

@@ -1,7 +1,37 @@
 :root {
-    --background-blue: #F5FBFC;
-    --font-fam: Inter;
-    --main-color: #35b8be;
-    --light-text: #546285;
-    --font-weight: 400;
+  --background-light: #f5fbfc;
+  --light-accent: #ffffff;
+  --font-fam: Inter;
+  --main-color: #35b8be;
+  --light-text: #546285;
+  --font-weight: 400;
+  --medium-text: #08090a;
+  --dark-borders: #35b8be26;
+  --light-borders: #dddddd;
+  --inputs-color: #fafafa;
+  --shadow-color: #7e828f45;
+  --dark-link: #28224b;
+  --dark-text: #000000;
+  --curr-text: #222222;
+  --button-borders: #61728333;
+  --main-oposite: #8c07bc;
+  --dots-color: #e5f1f3;
+}
+
+[data-theme='dark'] {
+  --light-accent: #222121;
+  --background-light: #4a484b;
+  --main-color: #8c07bc;
+  --light-text: #e8e8e8;
+  --medium-text: #ece1f0;
+  --dark-borders: #8c07bc26;
+  --light-borders: #424242;
+  --inputs-color: #807a7a;
+  --shadow-color: #edd9ff;
+  --dark-link: #dedede;
+  --dark-text: #ffffff;
+  --curr-text: #dadada;
+  --button-borders: #e7f3ff86;
+  --main-oposite: #35b8be;
+  --dots-color: #3f4647;
 }

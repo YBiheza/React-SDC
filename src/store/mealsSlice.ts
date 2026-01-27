@@ -1,37 +1,35 @@
-import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import type { TMealsInitial } from './TMealsSlice';
 import type { TMeals } from '../components/Menu/TMeals';
 
 export const fetchMeals = createAsyncThunk<TMeals[], void, { rejectValue: string }>(
-    'meals/fetchMeals',
-    async(__, {rejectWithValue }) => {
-        try {
-            const response = await fetch(
-                'https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals'
-            );
+  'meals/fetchMeals',
+  async (__, { rejectWithValue }) => {
+    try {
+      const response = await fetch('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals');
 
-            if(!response.ok) {
-                throw new Error('Failed to fetch meals');
-            }
+      if (!response.ok) {
+        throw new Error('Failed to fetch meals');
+      }
 
-            return await response.json();
-        } catch (error) {
-            return rejectWithValue('Ooops')
-        }
+      return await response.json();
+    } catch (error) {
+      return rejectWithValue('Ooops');
     }
+  }
 );
 
 const initialState: TMealsInitial = {
-    items: [],
-    loading: false,
-    error: null,
-}
+  items: [],
+  loading: false,
+  error: null,
+};
 
 const mealsSlice = createSlice({
-    name: 'meals',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
+  name: 'meals',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
     builder
       .addCase(fetchMeals.pending, (state) => {
         state.loading = true;
@@ -43,9 +41,9 @@ const mealsSlice = createSlice({
       })
       .addCase(fetchMeals.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload ?? "Unknown error";
+        state.error = action.payload ?? 'Unknown error';
       });
-    },
-})
+  },
+});
 
 export default mealsSlice.reducer;

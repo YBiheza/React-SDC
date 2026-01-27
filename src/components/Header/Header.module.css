@@ -2,6 +2,7 @@
 
 .header {
   width: 100%;
+  background-color: var(--light-accent);
 }
 
 .container {
@@ -19,6 +20,7 @@
 
   position: relative;
   z-index: 10;
+  background-color: var(--light-accent);
 }
 
 .right {
@@ -30,7 +32,11 @@
 .cart {
   padding: 19px 17px 19px 13px;
   background-color: var(--main-color);
-  border-radius: 4px
+  border-radius: 4px;
+}
+
+.cart:hover {
+  box-shadow: 0 0 25px var(--main-color);
 }
 
 .cartImg {
@@ -44,7 +50,7 @@
 .numerous {
   position: absolute;
   z-index: 10;
-  content: '1'; 
+  content: '1';
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,18 +58,17 @@
   height: 25px;
   top: -11px;
   right: -11px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--light-accent);
   border-radius: 50%;
-  color: var(--main-color);
+  color: var(--medium-text);
   font-size: 13px;
   line-height: 18px;
 
-  box-shadow: 7px 7px 25px 0px #7E828F45;
-
+  box-shadow: 7px 7px 25px 0px var(--shadow-color);
 }
 
 @media (max-width: 1236px) {
-    .container {
-      padding: 20px 5%;
-    }
+  .container {
+    padding: 20px 5%;
   }
+}

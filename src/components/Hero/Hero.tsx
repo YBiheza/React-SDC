@@ -1,13 +1,12 @@
 import React from 'react';
 import mockup from '../../assets/mockup.png';
 import trustpilot from '../../assets/trustpilot.png';
-import { Button } from '../Button'
+import { Button } from '../Button';
 import styles from './Hero.module.css';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export function Hero() {
-
   const navigate = useNavigate();
 
   return (
@@ -16,7 +15,8 @@ export function Hero() {
         <div className={styles.left}>
           <div className={styles.titleText}>
             <p className={styles.siteTitle}>
-              Beautiful food & takeaway, <span className={styles.spanText}>delivered</span> to your door.
+              Beautiful food & takeaway, <span className={styles.spanText}>delivered</span> to your
+              door.
             </p>
           </div>
           <div className={styles.paragraphText}>
@@ -26,7 +26,12 @@ export function Hero() {
             </p>
           </div>
           <div className={styles.buttonBlock}>
-            <Button onClick={() => navigate("/OrderPage")} label={'Place an order'} type={'submit'} disabled={false} />
+            <Button
+              onClick={() => navigate('/OrderPage')}
+              label={'Place an order'}
+              type={'submit'}
+              disabled={false}
+            />
           </div>
           <div className={styles.ratingBlock}>
             <img src={trustpilot} alt="rating image" className={styles.TrustpilotImg} />
@@ -44,4 +49,4 @@ export function Hero() {
   );
 }
 
-export default Hero
+export default Hero;

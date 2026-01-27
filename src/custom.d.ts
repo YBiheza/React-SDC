@@ -1,19 +1,19 @@
-declare module "*.module.css" {
+declare module '*.module.css' {
   const classes: { [key: string]: string };
   export default classes;
 }
 
-declare module "*.png" {
+declare module '*.png' {
   const value: string;
   export default value;
 }
 
-declare module "*.jpg" {
+declare module '*.jpg' {
   const value: string;
   export default value;
 }
 
-declare module "*.svg" {
+declare module '*.svg' {
   const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   export default ReactComponent;
 }

@@ -1,12 +1,22 @@
-import React from "react";
-import styles from "./Button.module.css";
-import type { TButtonProps } from './TButtonProps'
+import React from 'react';
+import styles from './Button.module.css';
+import type { TButtonProps } from './TButtonProps';
 
-export function Button ({ onClick, type = "button", disabled = false, label, current, cancel, inactive, ...props}: TButtonProps) {
+export function Button({
+  onClick,
+  type = 'button',
+  disabled = false,
+  label,
+  current,
+  cancel,
+  inactive,
+  toggle,
+  ...props
+}: TButtonProps) {
   return (
     <button
       type={type}
-      className={`${styles.buttonStyles} ${current === true ? styles.currButton : ''} ${inactive === true ? styles.inactiveButton : ''} ${cancel === true ? styles.cancelButton : ''}`}
+      className={`${styles.buttonStyles} ${current === true ? styles.currButton : ''} ${inactive === true ? styles.inactiveButton : ''} ${cancel === true ? styles.cancelButton : ''} ${toggle === true ? styles.toggle : ''}`}
       onClick={onClick}
       disabled={disabled}
       {...props}
@@ -16,5 +26,4 @@ export function Button ({ onClick, type = "button", disabled = false, label, cur
   );
 }
 
-
-export default Button
+export default Button;

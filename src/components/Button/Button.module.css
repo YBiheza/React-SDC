@@ -1,3 +1,5 @@
+@import url(../../variables.css);
+
 .buttonStyles {
   padding: 19px 35px;
   color: white;
@@ -13,16 +15,20 @@
 }
 
 button:disabled {
-  border: 1px solid #61728333;
+  border: 1px solid var(--button-borders);
   cursor: not-allowed;
   background-color: transparent;
-  color: #222222;
+  color: var(--curr-text);
+}
+
+.buttonStyles:hover {
+  box-shadow: 0 0 25px var(--main-color);
 }
 
 .currButton {
   background-color: transparent;
-  border: 1px solid #61728333;
-  color: #222222;
+  border: 1px solid var(--button-borders);
+  color: var(--curr-text);
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0%;
@@ -31,12 +37,25 @@ button:disabled {
 
 .inactiveButton {
   background-color: transparent;
-  border: 1px solid #61728333;
-  color: #222222;
+  border: 1px solid var(--button-borders);
+  color: var(--curr-text);
 }
 
 .cancelButton {
   padding: 6px 23px 12px 24px;
   font-size: 24px;
   line-height: 34px;
+}
+
+.toggle {
+  background-color: transparent;
+  border-style: none;
+  color: var(--main-color);
+  font-size: 16px;
+}
+
+.toggle:hover {
+  background-color: var(--medium-text);
+  box-shadow: 0 0 25px var(--main-oposite);
+  color: var(--main-oposite);
 }

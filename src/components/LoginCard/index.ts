@@ -1,2 +1,2 @@
-import LoginCard from './LoginCard'
-export {LoginCard}
+import LoginCard from './LoginCard';
+export { LoginCard };

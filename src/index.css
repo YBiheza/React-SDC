@@ -7,14 +7,12 @@
   list-style: none;
   font-family: var(--font-fam);
   font-weight: var(--font-weight);
-
 }
-
 
 a {
   text-decoration: none;
 }
 
 span {
-  color: var(--main-color)
+  color: var(--main-color);
 }

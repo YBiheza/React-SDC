@@ -37,6 +37,7 @@ const cartSlice = createSlice({
 
       if (updItem) {
         updItem.quantity = quantity;
+        state.count =  state.cartItems.reduce((sum, item) => sum + item.quantity, 0);
       }
     },
     deleteItem(state, action) {

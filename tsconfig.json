@@ -15,7 +15,7 @@
     "module": "ESNext",
     //"target": "esnext",
     "target": "ESNext",
-    "types": [],
+    "types": ["jest", "@testing-library/jest-dom"],
     // For nodejs:
     // "lib": ["esnext"],
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

@@ -62,7 +62,7 @@ export function Card({ key, id, category, name, description, price, image }: TCa
               onChange={handleInputChange}
               className={styles.goodsNumberField}
             />
-            <Button label="Add to card" onClick={handleAdd} type={'button'} disabled={false} />
+            <Button label="Add to cart" onClick={handleAdd} type={'button'} disabled={false} />
           </form>
         </div>
       </div>

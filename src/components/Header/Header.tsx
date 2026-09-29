@@ -50,7 +50,7 @@ export function Header() {
               </div>
             </NavLink>
             <div className={styles.numerous}>
-              <p>{totalCount}</p>
+              <p data-testid="cart-badge">{totalCount}</p>
             </div>
           </div>
         </div>

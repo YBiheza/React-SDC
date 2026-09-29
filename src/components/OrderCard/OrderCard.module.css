@@ -10,6 +10,7 @@
   padding: 40px 26px;
 
   background-color: var(--light-accent);
+  color: var(--medium-text);
 
   border: 1px solid var(--dark-borders);
   border-radius: 6px;

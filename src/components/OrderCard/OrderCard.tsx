@@ -23,7 +23,7 @@ export function OrderCard({ id, name, price, image, quantity }: TOrderCard) {
   };
 
   return (
-    <div className={styles.cardStyles}>
+    <div className={styles.cardStyles} data-testid="cancel-block-badge">
       <div className={styles.leftBlock}>
         <div className={styles.imageBlock}>
           <img src={image} className={styles.image} alt={name} />
@@ -32,8 +32,8 @@ export function OrderCard({ id, name, price, image, quantity }: TOrderCard) {
       </div>
 
       <div className={styles.rightBlock}>
-        <p className={styles.price}>{price}</p>
-        <div className={styles.buttonBlock}>
+        <p className={styles.price} data-testid="price-badge">{price}</p>
+        <div className={styles.buttonBlock} >
           <input
             value={quantity}
             onChange={handleChange}

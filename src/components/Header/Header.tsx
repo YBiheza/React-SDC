@@ -8,18 +8,22 @@ import { useAppSelector } from '../../store/hooks';
 import { MealSelector } from '../../selectors/MealsSelector';
 import { Button } from '../Button';
 import { useTheme } from '../../Context/ThemeProvider';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from '../LanguageSelector';
 
 const navigation = [
-  { name: 'Home', link: '' },
-  { name: 'Menu', link: '/menu' },
-  { name: 'Company', link: '#footer' },
-  { name: 'Login', link: '/authorisation' },
+  { nameKey: 'header.home', link: '' },
+  { nameKey: 'header.menu', link: '/menu' },
+  { nameKey: 'header.company', link: '#footer' },
+  { nameKey: 'header.login', link: '/authorisation' },
 ];
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
 
   const totalCount = useAppSelector(MealSelector);
+
+  const { t, i18n } = useTranslation()
 
   return (
     <header className={styles.header}>
@@ -32,12 +36,13 @@ export function Header() {
             <List points={navigation} parentComponent="Header" />
           </div>
           <Button
-            label="Change Theme"
+            label={t('header.themeToggle')}
             type={'submit'}
             disabled={false}
             toggle={true}
             onClick={toggleTheme}
           />
+          <LanguageSwitcher />
           <div className={styles.cartBlock}>
             <NavLink to="/OrderPage">
               <div className={styles.cart}>
